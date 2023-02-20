@@ -1,1 +1,12 @@
-<p>contact-preview works!</p>
+<article  class="contact-preview">
+    <img src="https://i.pravatar.cc/250?img={{idx+1}}">
+
+    <div  class="details flex column justify-center space-between">
+        <span>{{contact.name}}</span>
+        <div class="actions">
+            <button (click)="onEdit()">Edit</button>
+            <button (click)="onDelete()">Delete</button>
+        </div>
+    </div>
+
+</article>

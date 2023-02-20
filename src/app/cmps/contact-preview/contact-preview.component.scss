@@ -1,0 +1,44 @@
+.contact-preview{
+    position: relative;
+    width: fit-content;
+    border-radius: 200%;
+    height: 250px;
+    cursor: pointer;
+    
+    img{
+        border: 5px solid rgba(225, 225, 225, 0.294);
+        border-radius: 200%;
+        height: 100%;
+    }
+
+    .details{
+        padding: 15px;
+        position:absolute;
+        top: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 200%;
+        height: 250px;
+        color: black;
+        transition: .3s opacity ;
+        &:hover{
+            border: 5px solid rgba(29, 190, 8, 0.783);
+            opacity: 1;
+            background-color: rgba(225, 225, 225, 0.771);
+        }
+        
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 11px;
+            margin-inline: 7px;
+            background-color: #1e1e1e ;
+            color: aliceblue;
+            &:hover{
+                color: rgba(29, 190, 8, 0.783);
+            }
+            transition: .2s color;
+        }
+    }
+}

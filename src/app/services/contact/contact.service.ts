@@ -130,6 +130,7 @@ export class ContactService {
     //mock the server
     private _contactsDb: Contact[] = CONTACTS;
 
+
     private _contacts$ = new BehaviorSubject<Contact[]>([])
     public contacts$ = this._contacts$.asObservable()
 

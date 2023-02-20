@@ -1,5 +1,6 @@
 .header-container {
-border-bottom: .5px solid rgba(29, 190, 8, 0.325);
+    border-bottom: .5px solid rgba(29, 190, 8, 0.325);
+
     .app-header {
         margin-block: 25px;
 
@@ -25,6 +26,8 @@ border-bottom: .5px solid rgba(29, 190, 8, 0.325);
                     color: rgba(29, 190, 8, 0.783);
                     border-bottom: 1px solid rgba(29, 190, 8, 0.783);
                 }
+
+                transition:.2s color;
             }
         }
 

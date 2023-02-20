@@ -1,5 +1,3 @@
-<section class="contact-list">
-    <pre>    
-        {{contacts | json}}
-    </pre>
+<section class="contact-list grid">
+    <contact-preview *ngFor="let contact of contacts; index as idx" [idx]="idx" [contact]="contact"></contact-preview>
 </section>
