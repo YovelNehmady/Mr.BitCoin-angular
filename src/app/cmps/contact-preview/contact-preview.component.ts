@@ -10,13 +10,13 @@ export class ContactPreviewComponent {
   @Input() contact!: Contact
   @Input() idx!: number
 
-  onEdit(){
-    console.log('edit');
-    
+  onEdit(ev:MouseEvent){
+    ev.stopPropagation()
+    console.log('edit')
   }
-  onDelete(){
-    console.log('Delete');
-    
+  onDelete(ev:MouseEvent){
+    ev.stopPropagation()
+    console.log('Delete')
   }
 
 }
