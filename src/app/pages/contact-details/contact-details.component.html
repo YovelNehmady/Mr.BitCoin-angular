@@ -1,1 +1,24 @@
-<p>contact-details works!</p>
+<section class="details-page">
+    <a class="back-btn" routerLink="/contact">Back</a>
+    <h2>{{contact.name}}</h2>
+
+    <div class="flex space-between details-container">
+        <div class="flex column space-between contact-details">
+            <p class="flex">
+                <img src="../../../assets/svg/phone.svg">
+                {{contact.phone}}
+            </p>
+            <p class="flex">
+                <img src="../../../assets/svg/email.svg">
+                {{contact.email}}
+            </p>
+        </div>
+        <img class="contact-avatar" [src]=contact.imgUrl>
+    </div>
+
+    <div class="actions">
+        <a  routerLink="/contact/{{contact._id}}">Edit</a>
+        <button (click)="onDelete()">Delete</button>
+        <button  (click)="onNewTransfer()">New transfer</button>
+    </div>
+</section>

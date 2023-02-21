@@ -4,17 +4,22 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
 import { ContactIndexComponent } from './pages/contact-index/contact-index.component'
 import { HomeComponent } from './pages/home/home.component'
 import { StatisticComponent } from './pages/statistic/statistic.component'
+import { ContactResolveResolver } from './services/contact-resolve.resolver'
 
 const routes: Routes = [
-{path: '' , component : HomeComponent},
-{path: 'contact' , component : ContactIndexComponent},
-{path: 'contact/:id' , component : ContactDetailsComponent },
-{path: 'statistic' , component : StatisticComponent},
+  { path: '', component: HomeComponent },
+  { path: 'contact', component: ContactIndexComponent },
+  {
+    path: 'contact/:id',
+    component: ContactDetailsComponent,
+    resolve: { contact: ContactResolveResolver }
+  },
+  { path: 'statistic', component: StatisticComponent },
 
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],
-    exports: [RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

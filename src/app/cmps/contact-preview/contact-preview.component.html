@@ -1,7 +1,7 @@
-<article routerLink="/contact/{{contact._id}}"  class="contact-preview">
-    <img src="https://i.pravatar.cc/250?img={{idx+1}}">
+<article routerLink="/contact/{{contact._id}}" class="contact-preview">
+    <img [src]=contact.imgUrl>
 
-    <div  class="details flex column justify-center space-between">
+    <div class="details flex column justify-center space-between">
         <span>{{contact.name}}</span>
         <div class="actions">
             <button (click)="onEdit($event)">Edit</button>
