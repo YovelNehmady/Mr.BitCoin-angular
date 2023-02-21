@@ -168,10 +168,20 @@ export class ContactService {
 
     public getContactById(id: string): Observable<Contact> {
         //mock the server work
+        
         const contact = this._contactsDb.find(contact => contact._id === id)
 
         //return an observable
         return contact ? of(contact) : throwError(() => `Contact id ${id} not found!`)
+    }
+
+    public getEmptyContact(): Contact {        
+        return {
+            name: '',
+            email: '',
+            phone: '',
+            imgUrl: getRandomImgUrl()
+        }
     }
 
     public deleteContact(id: string) {
@@ -180,10 +190,13 @@ export class ContactService {
 
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
+        return of('')
     }
 
     public saveContact(contact: Contact) {
-        return contact._id ? this._updateContact(contact) : this._addContact(contact)
+        // return contact._id ? this._updateContact(contact) : this._addContact(contact)
+        return of(contact._id ? this._updateContact(contact) : this._addContact(contact))
+
     }
 
     private _updateContact(contact: Contact) {

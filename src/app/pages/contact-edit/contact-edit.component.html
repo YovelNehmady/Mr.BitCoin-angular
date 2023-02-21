@@ -1,1 +1,16 @@
-<p>contact-edit works!</p>
+<section *ngIf="contact" class="contact-edit">
+    <a class="back-btn" routerLink="/contact">Back</a>
+    <h2>Edit contact</h2>
+    <form (ngSubmit)="onSubmit()" class="flex column">
+        <label class="flex space-between">Full name
+            <input [(ngModel)]="contact.name" type="text" placeholder="Full name" name="name" id="name">
+        </label>
+        <label class="flex space-between">Phone number
+            <input [(ngModel)]="contact.phone" type="text" placeholder="Phine number" name="Phone" id="phone">
+        </label>
+        <label class="flex space-between">Email address
+            <input [(ngModel)]="contact.email" type="text" placeholder="Email address" name="email" id="email">
+        </label>
+        <button>Save</button>
+    </form>
+</section>

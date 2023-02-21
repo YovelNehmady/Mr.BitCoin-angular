@@ -13,6 +13,7 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ContactEditComponent } from './pages/contact-edit/contact-edit.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,17 +11,18 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactIndexComponent },
   {
-    path: 'contact/:id',
+    path: 'contact/:id',    
     component: ContactDetailsComponent,
-    resolve: { contact: ContactResolveResolver }
-  },
-  {
-    path: 'contact/edit', component: ContactEditComponent
+    resolve: { contact: ContactResolveResolver },
+    
   },
   {
     path: 'contact/edit/:id',
     component: ContactEditComponent,
     resolve: { contact: ContactResolveResolver }
+  },
+  {
+    path: 'contact/edit', component: ContactEditComponent,pathMatch:'full'
   },
   { path: 'statistic', component: StatisticComponent },
 
