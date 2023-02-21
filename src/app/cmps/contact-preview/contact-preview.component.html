@@ -4,8 +4,8 @@
     <div class="details flex column justify-center space-between">
         <span>{{contact.name}}</span>
         <div class="actions">
-            <button (click)="onEdit($event)">Edit</button>
-            <button (click)="onDelete($event)">Delete</button>
+            <button (click)="onEdit($event,contact._id)">Edit</button>
+            <button (click)="onRemove($event,contact._id)">Delete</button>
         </div>
     </div>
 

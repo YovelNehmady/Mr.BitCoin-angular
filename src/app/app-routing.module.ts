@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component'
+import { ContactEditComponent } from './pages/contact-edit/contact-edit.component'
 import { ContactIndexComponent } from './pages/contact-index/contact-index.component'
 import { HomeComponent } from './pages/home/home.component'
 import { StatisticComponent } from './pages/statistic/statistic.component'
@@ -12,6 +13,14 @@ const routes: Routes = [
   {
     path: 'contact/:id',
     component: ContactDetailsComponent,
+    resolve: { contact: ContactResolveResolver }
+  },
+  {
+    path: 'contact/edit', component: ContactEditComponent
+  },
+  {
+    path: 'contact/edit/:id',
+    component: ContactEditComponent,
     resolve: { contact: ContactResolveResolver }
   },
   { path: 'statistic', component: StatisticComponent },

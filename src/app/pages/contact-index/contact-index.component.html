@@ -1,2 +1,2 @@
 <contact-filter></contact-filter>
-<contact-list [contacts]="contacts"></contact-list>
+<contact-list (remove)="onRemove($event)" [contacts]="contacts"></contact-list>

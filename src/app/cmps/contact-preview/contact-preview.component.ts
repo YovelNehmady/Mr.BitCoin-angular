@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact.model';
 
 @Component({
@@ -7,16 +8,19 @@ import { Contact } from 'src/app/models/contact.model';
   styleUrls: ['./contact-preview.component.scss']
 })
 export class ContactPreviewComponent {
+  constructor(private router: Router) { }
   @Input() contact!: Contact
   @Input() idx!: number
+  @Output() remove = new EventEmitter
 
-  onEdit(ev:MouseEvent){
+  onEdit(ev: MouseEvent, contactId: string | undefined) {
     ev.stopPropagation()
-    console.log('edit')
+    this.router.navigate(['/contact/edit', contactId])
   }
-  onDelete(ev:MouseEvent){
+
+  onRemove(ev: MouseEvent, contactId: string | undefined) {
     ev.stopPropagation()
-    console.log('Delete')
+    this.remove.emit(contactId)
   }
 
 }

@@ -19,6 +19,7 @@ export class ContactDetailsComponent implements OnInit {
       this.contact = data['contact']
     })
   }
+  
   onNewTransfer(){
 
   }

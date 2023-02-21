@@ -11,7 +11,8 @@ import { ContactListComponent } from './cmps/contact-list/contact-list.component
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component'
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
-import { AppFooterComponent } from './cmps/app-footer/app-footer.component'
+import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
+import { ContactEditComponent } from './pages/contact-edit/contact-edit.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppFooterComponent } from './cmps/app-footer/app-footer.component'
     ContactPreviewComponent,
     ContactFilterComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    ContactEditComponent
   ],
   imports: [
     BrowserModule,
