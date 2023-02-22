@@ -9,23 +9,24 @@ import { ContactResolveResolver } from './services/contact-resolve.resolver'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'contact', component: ContactIndexComponent },
-  {
-    path: 'contact/:id',    
-    component: ContactDetailsComponent,
-    resolve: { contact: ContactResolveResolver },
-    
-  },
+  { path: 'contact', component: ContactIndexComponent, pathMatch: 'full' },
   {
     path: 'contact/edit/:id',
     component: ContactEditComponent,
     resolve: { contact: ContactResolveResolver }
   },
   {
-    path: 'contact/edit', component: ContactEditComponent,pathMatch:'full'
+    path: 'contact/edit', component: ContactEditComponent, pathMatch: 'full'
+  },
+
+  {
+    pathMatch: 'full',
+    path: 'contact/:id',
+    component: ContactDetailsComponent,
+    resolve: { contact: ContactResolveResolver },
+
   },
   { path: 'statistic', component: StatisticComponent },
-
 ]
 
 @NgModule({

@@ -1,6 +1,6 @@
 <section *ngIf="contact" class="contact-edit">
     <a class="back-btn" routerLink="/contact">Back</a>
-    <h2>Edit contact</h2>
+    <h2>{{contact._id?'Edit':'Add new'}} contact</h2>
     <form (ngSubmit)="onSubmit()" class="flex column">
         <label class="flex space-between">Full name
             <input [(ngModel)]="contact.name" type="text" placeholder="Full name" name="name" id="name">
@@ -11,6 +11,6 @@
         <label class="flex space-between">Email address
             <input [(ngModel)]="contact.email" type="text" placeholder="Email address" name="email" id="email">
         </label>
-        <button>Save</button>
+        <button>{{contact._id?'Save':'Add'}}</button>
     </form>
 </section>

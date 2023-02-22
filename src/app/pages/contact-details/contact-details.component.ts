@@ -20,8 +20,6 @@ export class ContactDetailsComponent implements OnInit {
   contact!: Contact
 
   ngOnInit(): void {
-    console.log('lolo');
-    
     this.subscription = this.route.data.subscribe(data => {
       this.contact = data['contact']
     })

@@ -12,11 +12,9 @@ import { ContactService } from './contact/contact.service'
   providedIn: 'root'
 })
 export class ContactResolveResolver implements Resolve<Contact> {
-  constructor(private contactService : ContactService){}
+  constructor(private contactService: ContactService) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Contact> {
-    
     const id = route.params['id']
-    console.log('h');
     return this.contactService.getContactById(id)
   }
 }
